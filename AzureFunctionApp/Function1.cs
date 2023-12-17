@@ -83,8 +83,6 @@ namespace AzureFunctionApp
 
             };
 
-            //var json = JsonConvert.SerializeObject(requestData);
-
             return JsonConvert.SerializeObject(requestData); 
         }
     }
