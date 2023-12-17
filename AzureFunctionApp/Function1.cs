@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Http.Extensions;
 using System.Collections.Generic;
+using System.Text.Json;
 
 namespace AzureFunctionApp
 {
@@ -82,8 +83,9 @@ namespace AzureFunctionApp
                 QueryParameters = queryParams,
 
             };
+            var options = new JsonSerializerSettings { Formatting = Formatting.Indented };
 
-            return JsonConvert.SerializeObject(requestData); 
+            return JsonConvert.SerializeObject(requestData, options); 
         }
     }
     
